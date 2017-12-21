@@ -1,0 +1,21 @@
+{% for thumbnail in thumbnails %}
+    <div class="card d-inline-block m-2 thumbnail">
+        <a href="/gallery/show/{{ thumbnail.id }}"><img class="card-img-top" src="/{{ thumbnail.path }}thumbnail/tn_{{ thumbnail.name }}" alt="{{ thumbnail.name }}">
+            <div class="card-img-overlay d-flex align-items-end p-0">
+                <div class="card-body">
+                    <p class="card-text"><span class="badge badge-light">#{{ thumbnail.id }}</span> <span class="float-right text-white"><i class="fa fa-eye" aria-hidden="true"></i> {{ thumbnail.views }}</span></p>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+{% if more %}
+    <div id="ajax-more" class="card d-inline-block m-2">
+        <a href="#">
+            <div class="card-body p-2 h-100 d-flex align-items-center">
+                <span id="more-text" class="text-dark">Еще..</span>
+                <img id="more-gif" src="/img/loading.gif">
+            </div>
+        </a>
+    </div>
+{% endif %}

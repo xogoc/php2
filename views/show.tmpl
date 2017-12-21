@@ -1,0 +1,15 @@
+{% include 'header.tmpl' %}
+<div class="container-fluid d-flex justify-content-center">
+    <div class="d-flex align-items-start flex-column">
+        <a class="btn btn-secondary mx-2 my-3" href="/gallery" role="button">Назад в Галерею</a>
+        <div class="card d-inline-block mx-2">
+            <img class="card-img-top" src="/{{ img.path }}{{ img.name }}" alt="{{ img.name }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ img.name }}</h4>
+                    <p class="card-text"><span class="badge badge-secondary">#{{ img.id }}</span> <span class="float-right text-muted"><i class="fa fa-eye" aria-hidden="true"></i> {{ img.views }}</span></p>
+                </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.tmpl' %}

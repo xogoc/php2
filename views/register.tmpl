@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <h5 class="modal-title">Регистрация</h5>
+    {% if modal %}
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {% endif %}
+</div>
+{% if success %}
+<p>Вы успешно зарегистрировались! Теперь Вы можете <a data-toggle="modal" href="#loginModal" >войти</a></p>
+{% else %}
+<form id="registerForm" action="/auth/register" method="POST">
+    <div class="modal-body">
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <div class="input-group my-1">
+            <input type="text" name="login" class="form-control" placeholder="Имя пользователя" required>
+        </div>
+        <div class="input-group my-1">
+            <input type="password" name="password" class="form-control" placeholder="Пароль" required>
+        </div>
+        <div class="input-group my-1">
+                            <span class="input-group-addon">
+                              <input type="radio" name="role" value="user" id="userInput{% if modal %}Modal{% endif %}" checked>
+                            </span>
+            <label class="form-control" for="userInput{% if modal %}Modal{% endif %}">Пользователь</label>
+        </div>
+        <div class="input-group my-1">
+                            <span class="input-group-addon">
+                              <input type="radio" name="role" value="admin" id="adminInput{% if modal %}Modal{% endif %}">
+                            </span>
+            <label class="form-control" for="adminInput{% if modal %}Modal{% endif %}">Администратор</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <input type="hidden" name="action" value="register">
+        <input type="submit" class="btn btn-dark form-control my-1" value="Зарегистрироваться">
+    </div>
+</form>
+{% endif %}

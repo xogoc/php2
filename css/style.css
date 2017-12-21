@@ -1,0 +1,29 @@
+.thumbnail {
+    width: 160px;
+}
+div.thumbnail:hover, div#ajax-more:hover {
+    border-color: rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: all .2s ease;
+}
+.thumbnail .card-body {
+    padding: 0px 5px 2px 5px;
+    background-color: rgba(0,0,0,0.2);
+}
+#ajax-more a:hover {
+    text-decoration: none;
+}
+div#ajax-more img,
+#auth div.alert {
+    display: none;
+    margin: 1px;
+}
+body {
+    background-color: #F5F5F5;
+}
+.auth {
+    max-width: 330px;
+}
+.mw-500 {
+    max-width: 530px;
+}

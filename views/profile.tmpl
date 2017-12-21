@@ -1,0 +1,22 @@
+{% include 'header.tmpl' %}
+
+<div class="container-fluid">
+    <h3 class="my-3 text-center">Личный кабинет</h3>
+    <div class="row justify-content-center">
+        <div class="col mw-500">
+            {% if user %}
+                <p>Привет, <strong>{{ user.login }}</strong>!</p>
+            {% else %}
+                <p>Доступ только для зарегистрированных пользователей!</p>
+                <p>
+                    <a data-toggle="modal" href="#loginModal" >Войти</a>
+                    <span>или</span>
+                    <a data-toggle="modal" href="#registerModal">зарегестрироваться</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% include 'footer.tmpl' %}

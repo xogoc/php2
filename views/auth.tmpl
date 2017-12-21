@@ -1,0 +1,11 @@
+{% include 'header.tmpl' %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col auth">
+            {% include(action ~ '.tmpl') %}
+        </div>
+    </div>
+</div>
+
+{% include 'footer.tmpl' %}

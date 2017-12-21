@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h5 class="modal-title">Вход</h5>
+    {% if modal %}
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {% endif %}
+</div>
+<form id="loginForm" action="/auth/login" method="POST">
+    <div class="modal-body">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        <div class="input-group my-1">
+            <input type="text" name="login" class="form-control" placeholder="Имя пользователя" required>
+        </div>
+        <div class="input-group my-1">
+            <input type="password" name="password" class="form-control" placeholder="Пароль" required>
+        </div>
+        <div class="input-group my-1">
+                                <span class="input-group-addon">
+                                  <input type="checkbox" id="remember{% if modal %}Modal{% endif %}" name="remember" value="1">
+                                </span>
+            <label class="form-control" for="remember{% if modal %}Modal{% endif %}">Запомнить меня</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <input type="hidden" name="action" value="login">
+        <input type="submit" class="btn btn-dark form-control my-1" value="Войти">
+    </div>
+</form>
